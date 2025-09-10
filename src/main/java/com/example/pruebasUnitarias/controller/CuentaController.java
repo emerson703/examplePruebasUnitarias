@@ -18,7 +18,7 @@ public class CuentaController {
     private CuentaService cuentaService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Cuenta> obtenerCuenta (@PathVariable Long Id){
+    public ResponseEntity<Cuenta> obtenerCuenta (@PathVariable("id") Long Id){
         Optional<Cuenta> cuenta = this.cuentaService.findById(Id);
         return cuenta.map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());

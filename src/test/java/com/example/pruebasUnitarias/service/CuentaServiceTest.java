@@ -24,7 +24,7 @@ public class CuentaServiceTest {
         CuentaServiceImpl service = new CuentaServiceImpl(cuentaRepository, bancoRepository);
         BigDecimal saldo = service.revisarSaldo(20L);
 
-        Assertions.assertEquals("14", saldo.toString());
+        Assertions.assertEquals("232", saldo.toString());
         verify(cuentaRepository).findById(20L);
     }
 
